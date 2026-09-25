@@ -1,0 +1,14 @@
+services:
+  - type: web
+    name: shelterstock-demo
+    runtime: docker
+    plan: free
+    dockerfilePath: ./Dockerfile
+    healthCheckPath: /health
+    envVars:
+      - key: DATABASE_URL
+        sync: false
+      - key: DEMO_USERNAME
+        value: demo
+      - key: DEMO_PASSWORD
+        generateValue: true

@@ -109,10 +109,11 @@ Success: 200 (201 for item creation). Invalid input: 422. Missing resource: 404.
 - [Implement cancellation yourself](docs/CANCELLATION_EXERCISE.md)
 - [Two-session presentation script](docs/DEMO.md)
 - [Deployment and GitHub publishing](docs/DEPLOYMENT.md)
+- [Free recruiter demo on Render and Neon](docs/FREE_DEMO.md)
 - [Verification record](docs/VERIFICATION.md)
 
 ## Scope and tradeoffs
 
-This prototype has no authentication or authorization: the volunteer dropdown is a demo session selector, not a security boundary. Compose binds HTTP ports to localhost and does not publish the database port. Before any Internet-facing deployment, add access control, HTTPS, secret management, request limits, and backups; see deployment instructions.
+The local Compose app has no authentication or authorization: the volunteer dropdown is a demo session selector, not a security boundary. Compose binds HTTP ports to localhost and does not publish the database port. The optional hosted demo wraps the UI and API in a shared-password access gate; see the free demo instructions. A real deployment still needs individual authorization, HTTPS, secret management, request limits, and backups.
 
 Inventory edits are authoritative counts with last-write-wins behavior; an audit ledger and optimistic version checking would improve real inventory reconciliation. History records current item names rather than immutable name snapshots. Lists are unpaginated. There is no automatic reservation expiry, partial fulfillment, family data, multi-location stock, or claim of real-world adoption or measured performance.
