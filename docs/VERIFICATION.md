@@ -22,4 +22,8 @@ Docker was not installed in the build environment. The Dockerfiles and Compose w
 
 The cancellation exercise is deliberately unfinished and excluded from the normal test suite. Its separate checks are expected to fail until the learner implements it.
 
-No public deployment, charity adoption, load benchmark, or GitHub CI run is claimed by this verification record.
+## Hosted demo follow-up — September 25, 2026
+
+Deployed the recruiter demo to Render's Free web service with Neon Free PostgreSQL 16. The hosted wrapper's tests bring the suite to 23 passing tests. GitHub Actions passed the PostgreSQL suite, Compose frontend build, and combined hosted Docker image build. The live HTTPS endpoint passed health, unauthorized-access rejection, authenticated frontend/API reads, reservation, and cancellation checks. The earlier Docker limitation above describes the original local build environment; CI subsequently verified the container builds.
+
+Live URL: https://shelterstock-demo.onrender.com. Credentials are shared privately, not stored in this repository. No charity adoption or load benchmark is claimed.

@@ -2,6 +2,8 @@
 
 **An inventory system that tracks donated items and lets volunteers reserve them for pickups without double-booking limited stock.**
 
+[Live recruiter demo](https://shelterstock-demo.onrender.com) — request demo credentials from the project owner. The free service may take about a minute to wake after inactivity. All records are fictional.
+
 Inspired by volunteering at a donation-based charity. This is a portfolio prototype, not a charity deployment. It uses fictional volunteers and random pickup IDs; it stores no family details. The main engineering problem is making a reservation correct when two people want the last unit at the same time.
 
 ## Run locally
