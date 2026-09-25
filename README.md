@@ -2,7 +2,7 @@
 
 **An inventory system that tracks donated items and lets volunteers reserve them for pickups without double-booking limited stock.**
 
-[Live recruiter demo](https://shelterstock-demo.onrender.com) — request demo credentials from the project owner. The free service may take about a minute to wake after inactivity. All records are fictional.
+[Live recruiter demo](https://shelterstock-demo.onrender.com) — open directly, no sign-in required. The free service may take about a minute to wake after inactivity. All records are fictional.
 
 Inspired by volunteering at a donation-based charity. This is a portfolio prototype, not a charity deployment. It uses fictional volunteers and random pickup IDs; it stores no family details. The main engineering problem is making a reservation correct when two people want the last unit at the same time.
 
@@ -116,6 +116,6 @@ Success: 200 (201 for item creation). Invalid input: 422. Missing resource: 404.
 
 ## Scope and tradeoffs
 
-The local Compose app has no authentication or authorization: the volunteer dropdown is a demo session selector, not a security boundary. Compose binds HTTP ports to localhost and does not publish the database port. The optional hosted demo wraps the UI and API in a shared-password access gate; see the free demo instructions. A real deployment still needs individual authorization, HTTPS, secret management, request limits, and backups.
+The local Compose app has no authentication or authorization: the volunteer dropdown is a demo session selector, not a security boundary. Compose binds HTTP ports to localhost and does not publish the database port. The hosted demo is also public, with shared fictional records and no sign-in; see the free demo instructions. A real deployment still needs individual authorization, HTTPS, secret management, request limits, and backups.
 
 Inventory edits are authoritative counts with last-write-wins behavior; an audit ledger and optimistic version checking would improve real inventory reconciliation. History records current item names rather than immutable name snapshots. Lists are unpaginated. There is no automatic reservation expiry, partial fulfillment, family data, multi-location stock, or claim of real-world adoption or measured performance.
